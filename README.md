@@ -1,3 +1,14 @@
 # The Lando Way
 
-The Lando Way is a collection of plays by [@TheLandolorien](https://github.com/TheLandolorien) to tackle common problems at home and at work.
+<div align="center">
+  <img alt="The Lando Way Logo" src="./assets/logos/transparent-bg_blue.png" width="300px" /><br/>
+  <p>A playbook to tackle problems @home and @work.</p>
+</div>
+
+## ⏱️ Coming Soon
+
+Look for the first plays arriving Fall 2023.
+
+## License
+
+This playbook is [MIT licensed](./LICENSE).
