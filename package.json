@@ -1,0 +1,19 @@
+{
+  "name": "the-lando-way",
+  "version": "1.0.0",
+  "description": "A playbook to tackle problems @home and @work.",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLandolorien/thelandolorien.github.io.git"
+  },
+  "keywords": [
+    "playbook"
+  ],
+  "author": "Lando Toothman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheLandolorien/thelandolorien.github.io/issues"
+  },
+  "homepage": "https://thelandolorien.github.io"
+}
