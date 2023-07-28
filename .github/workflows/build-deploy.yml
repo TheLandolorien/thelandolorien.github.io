@@ -1,0 +1,58 @@
+# See GitHub Action Docs for more examples
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Build and Deploy Static Content to GitHub Pages
+run-name: ${{ github.actor }} is deploying new content to GitHub Pages
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: ['main']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.17.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.0'
+
+      - name: Clean Install package dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Build static content
+        run: npm run build
+
+      - name: Upload static content
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './build'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
