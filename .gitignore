@@ -28,3 +28,8 @@ dist/
 
 # Miscellaneous
 .DS_Store
+
+# Cypress
+src/__tests__/__snapshots__/screenshots/
+src/__tests__/__snapshots__/videos/
+cypress.env.json
