@@ -21,5 +21,8 @@ module.exports = defineConfig({
     specPattern: 'src/__tests__/e2e/**/*.test.{ts,tsx}',
     supportFile: 'src/__tests__/__mocks__/e2e.ts',
     baseUrl: 'http://localhost:9000',
+    downloadsFolder: 'src/__tests__/__snapshots__/downloads',
+    screenshotsFolder: 'src/__tests__/__snapshots__/screenshots',
+    videosFolder: 'src/__tests__/__snapshots__/videos',
   },
 });

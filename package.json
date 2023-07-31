@@ -18,7 +18,7 @@
   "homepage": "https://thelandolorien.github.io",
   "scripts": {
     "build": "webpack --config webpack.production.js",
-    "start": "webpack serve --config webpack.development.js",
+    "start": "webpack serve",
     "test": "npm run test:unit",
     "test:unit": "jest --passWithNoTests",
     "test:unit:watch": "jest --watch",
