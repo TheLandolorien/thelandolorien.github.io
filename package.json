@@ -23,7 +23,8 @@
     "test:unit": "jest --passWithNoTests",
     "test:unit:watch": "jest --watch",
     "test:unit:coverage": "jest --coverage",
-    "test:component": "cypress run --component"
+    "test:component": "cypress run --component",
+    "test:e2e": "webpack serve --config webpack.production.js --port 9000 --no-open & wait-on http://localhost:9000 && cypress run && kill $(ps cx | grep '[w]ebpack' | awk '{ print $1 }')"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -48,6 +49,7 @@
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
+    "wait-on": "^7.0.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
